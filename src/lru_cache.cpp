@@ -64,6 +64,10 @@ int main(){
     cout << cache.get(1) << "\n";
     cache.put(3, 30);            
     cout << cache.get(2) << "\n";
+   cache.put(4, 40);             
+    cout << cache.get(1) << " " << cache.get(3) << " " << cache.get(4) << "\n";
+    return 0;
+}
 
 
 
