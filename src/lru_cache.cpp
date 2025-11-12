@@ -42,7 +42,14 @@ void _remove(Node* n){ n->prev->next = n->next; n->next->prev = n->prev; }
             _remove(n); _push_front(n);
             return;
         }
-
+     if(sz==cap){
+            // evict LRU: node before tail
+            Node* lru = tail->prev;
+            mp.erase(lru->key);
+            _remove(lru);
+            delete lru;
+            sz--;
+        }
 
 
 
