@@ -22,3 +22,8 @@ int cap, sz;
         head->next = tail; tail->prev = head;
         mp.clear(); sz=0;
     }
+void _remove(Node* n){ n->prev->next = n->next; n->next->prev = n->prev; }
+    void _push_front(Node* n){
+        n->next = head->next; n->prev = head;
+        head->next->prev = n; head->next = n;
+    }
