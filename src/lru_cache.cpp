@@ -34,3 +34,20 @@ void _remove(Node* n){ n->prev->next = n->next; n->next->prev = n->prev; }
         _remove(n); _push_front(n);
         return n->val;
     }
+ void put(int key, int value){
+        auto it = mp.find(key);
+        if(it!=mp.end()){
+            Node* n = it->second;
+            n->val = value;
+            _remove(n); _push_front(n);
+            return;
+        }
+
+
+
+
+
+
+
+
+
