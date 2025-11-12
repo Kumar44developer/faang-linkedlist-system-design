@@ -57,6 +57,11 @@ void _remove(Node* n){ n->prev->next = n->next; n->next->prev = n->prev; }
     }
 };
 
+int main(){
+    LRUCache cache(2);
+    cache.put(1, 10);
+    cache.put(2, 20);
+    cout << cache.get(1) << "\n";
 
 
 
