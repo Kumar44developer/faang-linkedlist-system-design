@@ -14,3 +14,11 @@ int cap, sz;
         tail = new Node(-1,-1);
         head->next = tail; tail->prev = head;
     }
+~LRUCache(){ clear(); delete head; delete tail; }
+
+    void clear(){
+        Node* cur = head->next;
+        while(cur!=tail){ Node* nx=cur->next; delete cur; cur=nx; }
+        head->next = tail; tail->prev = head;
+        mp.clear(); sz=0;
+    }
