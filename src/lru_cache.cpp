@@ -50,6 +50,13 @@ void _remove(Node* n){ n->prev->next = n->next; n->next->prev = n->prev; }
             delete lru;
             sz--;
         }
+      Node* n = new Node(key,value);
+        _push_front(n);
+        mp[key]=n;
+        sz++;
+    }
+};
+
 
 
 
